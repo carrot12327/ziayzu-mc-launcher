@@ -20,11 +20,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
     - name: Cache Gradle packages
-      uses: actions/cache@v4  # ← UPDATED from v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -36,14 +33,12 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x gradlew
 
-    - name: Clean project
-      run: ./gradlew clean
-
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --stacktrace --warning-mode all
+      run: ./gradlew clean assembleDebug --stacktrace --no-daemon
 
     - name: Upload APK
-      uses: actions/upload-artifact@v4  # ← CRITICAL FIX: Updated from v3
+      uses: actions/upload-artifact@v4
+      if: success()
       with:
         name: debug-apk
-        path: app_pojavlauncher/build/outputs/apk/debug/
+        path: app_pojavlauncher/build/outputs/apk/debug/*.apk
