@@ -24,7 +24,7 @@ jobs:
       uses: android-actions/setup-android@v3
 
     - name: Cache Gradle packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4  # ← UPDATED from v3
       with:
         path: |
           ~/.gradle/caches
@@ -43,7 +43,7 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace --warning-mode all
 
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  # ← CRITICAL FIX: Updated from v3
       with:
         name: debug-apk
         path: app_pojavlauncher/build/outputs/apk/debug/
