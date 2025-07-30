@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="control_button_color">#4CC4C4C4</color>
-    <color name="control_button_pressed_color">#4D000000</color>
+    <!-- Base application colors -->
+    <color name="colorPrimary">#FF9800</color>        <!-- Orange 500 -->
+    <color name="colorPrimaryDark">#F57C00</color>    <!-- Orange 700 -->
+    <color name="colorAccent">#FF9800</color>         <!-- Orange 500 -->
 
-    <color name="minebutton_color">#9649b8</color>
-    <color name="background_app">#181818</color>
-    <color name="divider">@color/background_overlay</color>
-    <color name="background_overlay">#464646</color>
-    <color name="background_status_bar">#242424</color>
-    <color name="background_bottom_bar">#232323</color>
+    <!-- Additional colors (customize if needed) -->
+    <color name="colorBackground">#FFFFFF</color>     <!-- White background -->
+    <color name="colorTextPrimary">#212121</color>    <!-- Primary text -->
+    <color name="colorTextSecondary">#757575</color>  <!-- Secondary text -->
 
-    <color name="primary_text">#FFFFFF</color>
-    <color name="secondary_text">#B2B2B2</color>
+    <!-- UI element color example -->
+    <color name="colorButtonNormal">#FF9800</color>   <!-- Orange button -->
 </resources>
