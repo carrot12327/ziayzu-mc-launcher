@@ -10,17 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Add your activities and other components below this line -->
-        <!-- Example: -->
-        <!--
+        <!-- Example launcher activity; update or add your activities here -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        -->
-        <!-- End of your app components -->
+
+        <!-- Add your other activities, services, receivers below -->
 
     </application>
 
