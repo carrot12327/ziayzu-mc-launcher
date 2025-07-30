@@ -3,8 +3,8 @@ name: Android CI
 on:
   pull_request:
     branches-ignore:
-      - 'l10n_v3_openjdk' 
-    types: [ opened, reopened ]
+      - 'l10n_v3_openjdk'
+    types: [opened, reopened]
   push:
     branches-ignore:
       - 'l10n_v3_openjdk'
@@ -24,6 +24,9 @@ jobs:
 
       - name: Make script executable
         run: chmod +x ./scripts/languagelist_updater.sh
+
+      - name: Make Gradle Wrapper executable
+        run: chmod +x ./gradlew
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
