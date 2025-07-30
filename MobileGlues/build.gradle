@@ -1,1 +1,1 @@
-
+apply plugin: 'java-library' // or 'com.android.library' if it’s an Android library
