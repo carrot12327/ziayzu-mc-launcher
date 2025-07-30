@@ -4,25 +4,25 @@
     <color name="colorPrimaryDark">#F57C00</color>       <!-- Orange 700 -->
     <color name="colorAccent">#FF9800</color>            <!-- Orange 500 -->
 
-    <!-- Backgrounds -->
+    <!-- Background Colors -->
     <color name="background_app">#FFFFFF</color>          <!-- White background for app -->
     <color name="background_status_bar">#F57C00</color>   <!-- Orange for status bar -->
-    <color name="colorBackground">#FFFFFF</color>         <!-- Additional background (white) -->
-    <color name="background_main">#FFFFFF</color>         <!-- Another white background -->
-    <color name="background_bottom_bar">#FF9800</color>   <!-- Orange bottom bar -->
+    <color name="colorBackground">#FFFFFF</color>         <!-- Default background -->
+    <color name="background_main">#FFFFFF</color>         <!-- Another main background -->
+    <color name="background_bottom_bar">#FF9800</color>   <!-- Orange bottom bar background -->
 
     <!-- Dividers -->
-    <color name="divider">#DADADA</color>                 <!-- Light gray divider -->
+    <color name="divider">#DADADA</color>                  <!-- Light gray divider -->
 
-    <!-- Text colors -->
-    <color name="colorTextPrimary">#212121</color>        <!-- Main dark text -->
-    <color name="colorTextSecondary">#757575</color>      <!-- Secondary gray text -->
-    <color name="primary_text">#212121</color>            <!-- Duplicate for legacy use -->
-    <color name="secondary_text">#757575</color>          <!-- Duplicate for legacy use -->
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>        <!-- Dark gray -->
+    <color name="colorTextSecondary">#757575</color>      <!-- Medium gray -->
+    <color name="primary_text">#212121</color>             <!-- Duplicate for legacy or use -->
+    <color name="secondary_text">#757575</color>           <!-- Duplicate -->
 
     <!-- Buttons -->
-    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange buttons -->
-    <color name="minetbutton_color">#FF9800</color>       <!-- Another orange button color -->
+    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange button color -->
+    <color name="minetbutton_color">#FF9800</color>       <!-- Another button color if used -->
 
-    <!-- Add extra custom colors if your layouts or styles reference them -->
+    <!-- Add additional color resources if your layouts/styles reference them -->
 </resources>
