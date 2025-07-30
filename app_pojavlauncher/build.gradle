@@ -1,22 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "net.kdt.pojavlaunch"
-    compileSdkVersion 32
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "net.kdt.pojavlaunch"
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-        }
-        debug {
             minifyEnabled false
         }
     }
@@ -28,8 +25,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    
-    // Add other dependencies ONLY after this basic version builds successfully
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
 }
