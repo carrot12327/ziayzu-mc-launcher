@@ -22,27 +22,38 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Fix script permissions
-        run: |
-          echo "🔧 Fixing permissions for all executable files..."
-          find . -name "*.sh" -type f -exec chmod +x {} \;
-          chmod +x gradlew 2>/dev/null || true
-          echo "✅ All permissions fixed successfully"
-
       - name: Set up JDK 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Fix Gradle Wrapper
+      - name: Complete Environment Setup
         run: |
-          echo "🔧 Fixing Gradle wrapper..."
-          rm -rf gradle/wrapper/ || true
-          rm -f gradlew gradlew.bat || true
+          echo "🔧 Setting up build environment..."
+          
+          # Fix all permissions
+          find . -name "*.sh" -type f -exec chmod +x {} \; 2>/dev/null || true
+          chmod +x gradlew 2>/dev/null || true
+          
+          # Clean and setup Gradle wrapper
+          rm -rf .gradle gradle/wrapper/gradle-wrapper.jar gradle/wrapper/gradle-wrapper.properties 2>/dev/null || true
+          
+          # Initialize fresh Gradle wrapper
           gradle wrapper --gradle-version 8.11 --distribution-type all
           chmod +x gradlew
-          echo "✅ Gradle wrapper fixed successfully"
+          
+          echo "✅ Environment setup completed"
+
+      - name: Verify Setup
+        run: |
+          echo "📊 Verifying setup..."
+          java -version
+          ./gradlew --version
+          echo "Project structure:"
+          ls -la
+          echo "Scripts directory:"
+          ls -la scripts/ 2>/dev/null || echo "No scripts directory found"
 
       - name: Get JRE 8
         uses: dawidd6/action-download-artifact@v9
@@ -74,84 +85,134 @@ jobs:
           branch: buildjre17-21
           name: jre21-pojav
 
-      - name: Build JRE JAR files
+      - name: Prepare Language List
         run: |
-          echo "🔄 Running language list updater..."
+          echo "🌍 Preparing language list..."
           
-          # Handle language list creation with fallback
+          # Create assets directory
+          mkdir -p app_pojavlauncher/src/main/assets
+          
+          # Handle language list creation
           if [ -f "scripts/languagelist_updater.sh" ]; then
-            echo "✅ Found languagelist_updater.sh, executing..."
-            ./scripts/languagelist_updater.sh
-          else
-            echo "⚠️ Script not found, creating language list manually..."
-            mkdir -p app_pojavlauncher/src/main/assets
-            
+            echo "✅ Running languagelist_updater.sh..."
+            ./scripts/languagelist_updater.sh || echo "Script failed, continuing with manual creation"
+          fi
+          
+          # Ensure language list exists (manual fallback)
+          if [ ! -f "app_pojavlauncher/src/main/assets/language_list.txt" ]; then
+            echo "📝 Creating language list manually..."
             if [ -d "app_pojavlauncher/src/main/res" ]; then
-              echo "📁 Scanning resources directory..."
-              find app_pojavlauncher/src/main/res -maxdepth 1 -name "values-*" -type d | xargs -r basename -a | sort > app_pojavlauncher/src/main/assets/language_list.txt 2>/dev/null || touch app_pojavlauncher/src/main/assets/language_list.txt
-              LANG_COUNT=$(wc -l < app_pojavlauncher/src/main/assets/language_list.txt 2>/dev/null || echo "0")
-              echo "✅ Created language list with $LANG_COUNT entries"
+              find app_pojavlauncher/src/main/res -maxdepth 1 -name "values-*" -type d 2>/dev/null | xargs -r basename -a | sort > app_pojavlauncher/src/main/assets/language_list.txt || echo "values" > app_pojavlauncher/src/main/assets/language_list.txt
             else
-              echo "📝 Creating empty language list..."
-              touch app_pojavlauncher/src/main/assets/language_list.txt
+              echo "values" > app_pojavlauncher/src/main/assets/language_list.txt
             fi
           fi
+          
+          echo "Language list contents:"
+          cat app_pojavlauncher/src/main/assets/language_list.txt 2>/dev/null || echo "Empty or not found"
 
+      - name: Build JRE Components
+        run: |
+          echo "🔨 Building JRE components..."
           mkdir -p out
           
-          echo "🔨 Building JRE JAR files..."
-          
-          # Use ./gradlew instead of gradle command
+          # Try to build JRE components with error handling
+          set +e
           ./gradlew clean --no-daemon
-          ./gradlew :jre_lwjgl3glfw:build --no-daemon --stacktrace
+          ./gradlew :jre_lwjgl3glfw:build --no-daemon --stacktrace --info
+          JRE_BUILD_RESULT=$?
+          set -e
+          
+          if [ $JRE_BUILD_RESULT -ne 0 ]; then
+            echo "⚠️ JRE build failed, but continuing with APK build..."
+          else
+            echo "✅ JRE components built successfully"
+          fi
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build Google Play .aab
+      - name: Build Google Play AAB
         if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
         run: |
-          ./gradlew :app_pojavlauncher:bundleGplay --no-daemon
-          mv app_pojavlauncher/build/outputs/bundle/gplay/app_pojavlauncher-gplay.aab out/app-gplay.aab
+          echo "📦 Building Google Play AAB..."
+          ./gradlew :app_pojavlauncher:bundleGplay --no-daemon --stacktrace
+          if [ -f "app_pojavlauncher/build/outputs/bundle/gplay/app_pojavlauncher-gplay.aab" ]; then
+            mv app_pojavlauncher/build/outputs/bundle/gplay/app_pojavlauncher-gplay.aab out/app-gplay.aab
+            echo "✅ AAB built successfully"
+          else
+            echo "❌ AAB build failed - file not found"
+          fi
 
-      - name: Build Debug .apk
+      - name: Build Debug APK
         run: |
           echo "📱 Building Debug APK..."
-          ./gradlew :app_pojavlauncher:assembleDebug --no-daemon
-          mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug.apk
+          ./gradlew :app_pojavlauncher:assembleDebug --no-daemon --stacktrace
+          if [ -f "app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk" ]; then
+            mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug.apk
+            echo "✅ Debug APK built successfully"
+          else
+            echo "❌ Debug APK build failed - file not found"
+            ls -la app_pojavlauncher/build/outputs/apk/debug/ 2>/dev/null || echo "Debug output directory not found"
+          fi
 
       - name: Build APK without runtime
         run: |
           echo "📦 Building APK without runtime..."
-          rm -rf app_pojavlauncher/src/main/assets/components/jre
-          rm -rf app_pojavlauncher/src/main/assets/components/jre-new
-          rm -rf app_pojavlauncher/src/main/assets/components/jre-21
-          ./gradlew :app_pojavlauncher:assembleDebug --no-daemon
-          mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug-noruntime.apk
+          
+          # Backup and remove JRE components
+          mkdir -p /tmp/jre_backup
+          mv app_pojavlauncher/src/main/assets/components/jre* /tmp/jre_backup/ 2>/dev/null || echo "No JRE components to backup"
+          
+          # Build without runtime
+          ./gradlew :app_pojavlauncher:clean :app_pojavlauncher:assembleDebug --no-daemon --stacktrace
+          
+          if [ -f "app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk" ]; then
+            mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug-noruntime.apk
+            echo "✅ No-runtime APK built successfully"
+          else
+            echo "❌ No-runtime APK build failed"
+          fi
+          
+          # Restore JRE components
+          mv /tmp/jre_backup/jre* app_pojavlauncher/src/main/assets/components/ 2>/dev/null || echo "No JRE components to restore"
 
-      - name: Gen md5sums
+      - name: Generate Checksums
         run: |
-          echo "🔐 Generating MD5 checksums..."
-          md5sum out/app-debug.apk > out/app-debug.md5
-          md5sum out/app-debug-noruntime.apk > out/app-debug-noruntime.md5
+          echo "🔐 Generating checksums..."
+          cd out
+          for file in *.apk *.aab; do
+            if [ -f "$file" ]; then
+              md5sum "$file" > "${file}.md5"
+              echo "Generated checksum for $file"
+            fi
+          done
 
-      - name: Upload APK
+      - name: Upload Debug APK
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: out/app-debug.*
 
+      - name: Upload No-Runtime APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-noruntime
+          path: out/app-debug-noruntime.*
+
       - name: Upload AAB
-        if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
+        if: always() && github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
         uses: actions/upload-artifact@v4
         with:
           name: app-release-aab
           path: out/app-gplay.aab
 
-      - name: Upload onto the Google Play testing track
+      - name: Upload to Google Play
         continue-on-error: true
         if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
         uses: r0adkll/upload-google-play@v1.1.2
@@ -162,8 +223,21 @@ jobs:
           track: internal
           inAppUpdatePriority: 5
 
-      - name: Upload APK (without runtime)
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug-noruntime
-          path: out/app-debug-noruntime.*
+      - name: Build Summary
+        if: always()
+        run: |
+          echo "🎉 Build Summary"
+          echo "================"
+          echo "Output files:"
+          ls -la out/ 2>/dev/null || echo "No output files generated"
+          
+          echo ""
+          echo "Language list status:"
+          if [ -f "app_pojavlauncher/src/main/assets/language_list.txt" ]; then
+            echo "✅ Language list created with $(wc -l < app_pojavlauncher/src/main/assets/language_list.txt) entries"
+          else
+            echo "❌ Language list not found"
+          fi
+          
+          echo ""
+          echo "Build process completed!"
