@@ -1,23 +1,30 @@
 <resources>
-    <!-- Primary and accent colors -->
+    <!-- Primary and accent colors (Orange theme) -->
     <color name="colorPrimary">#FF9800</color>           <!-- Orange 500 -->
     <color name="colorPrimaryDark">#F57C00</color>       <!-- Orange 700 -->
     <color name="colorAccent">#FF9800</color>            <!-- Orange 500 -->
 
     <!-- Background colors -->
-    <color name="background_app">#FFFFFF</color>          <!-- White background for app -->
+    <color name="background_app">#FFFFFF</color>          <!-- White app background -->
     <color name="background_status_bar">#F57C00</color>   <!-- Darker orange for status bar -->
     <color name="colorBackground">#FFFFFF</color>         <!-- Default background (white) -->
+    <color name="background_main">#FFFFFF</color>         <!-- Main background -->
 
-    <!-- Divider -->
+    <!-- Divider color -->
     <color name="divider">#DADADA</color>                  <!-- Light gray divider -->
 
     <!-- Text colors -->
-    <color name="colorTextPrimary">#212121</color>        <!-- Dark gray for main text -->
-    <color name="colorTextSecondary">#757575</color>      <!-- Medium gray for secondary text -->
+    <color name="colorTextPrimary">#212121</color>        <!-- Dark gray primary text -->
+    <color name="colorTextSecondary">#757575</color>      <!-- Medium gray secondary text -->
+    <color name="primary_text">#212121</color>             <!-- Another primary text if needed -->
+    <color name="secondary_text">#757575</color>           <!-- Secondary text duplicate -->
 
-    <!-- Additional UI elements -->
-    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange button color -->
+    <!-- Bottom bar background -->
+    <color name="background_bottom_bar">#FF9800</color>    <!-- Orange bottom bar -->
 
-    <!-- Add any other colors your project references here -->
+    <!-- Button color -->
+    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange button -->
+
+    <!-- Other custom colors your app may reference -->
+    <color name="minetbutton_color">#FF9800</color>
 </resources>
