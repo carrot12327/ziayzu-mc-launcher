@@ -35,21 +35,16 @@ if [ ! -d "$RES_DIR" ]; then
     exit 1
 fi
 
-echo "🔍 Scanning for language resource directories in: $RES_DIR"
+echo "🔍 Scanning for language resource directories..."
 
 # Create the language list from values-* directories
-# Using your original logic but with improved error handling
+# Using your original logic with proper error handling
 VALUES_DIRS="$RES_DIR/values-*"
 if ls $VALUES_DIRS 1> /dev/null 2>&1; then
-    # Use your original method but with better handling
+    # Use your original method: echo and xargs with basename
     echo $VALUES_DIRS | xargs -- basename -a | sort > "$LANGFILE"
-else
-    echo "⚠️  No values-* directories found, creating empty language list"
-    touch "$LANGFILE"
-fi
-
-# Verify the file was created successfully
-if [ -f "$LANGFILE" ]; then
+    
+    # Verify the file was created and has content
     if [ -s "$LANGFILE" ]; then
         LANG_COUNT=$(wc -l < "$LANGFILE")
         echo "✅ Language list updated successfully!"
@@ -58,11 +53,11 @@ if [ -f "$LANGFILE" ]; then
         cat "$LANGFILE"
     else
         echo "⚠️  Language file created but is empty"
-        echo "📝 This might be normal if no localized resources exist yet"
+        touch "$LANGFILE"
     fi
 else
-    echo "❌ Error: Failed to create language file: $LANGFILE"
-    exit 1
+    echo "⚠️  No values-* directories found, creating empty language list"
+    touch "$LANGFILE"
 fi
 
 echo "🎉 Language list update completed successfully!"
