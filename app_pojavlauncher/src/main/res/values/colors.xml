@@ -1,14 +1,23 @@
 <resources>
-    <!-- Base application colors -->
-    <color name="colorPrimary">#FF9800</color>        <!-- Orange 500 -->
-    <color name="colorPrimaryDark">#F57C00</color>    <!-- Orange 700 -->
-    <color name="colorAccent">#FF9800</color>         <!-- Orange 500 -->
+    <!-- Primary and accent colors -->
+    <color name="colorPrimary">#FF9800</color>           <!-- Orange 500 -->
+    <color name="colorPrimaryDark">#F57C00</color>       <!-- Orange 700 -->
+    <color name="colorAccent">#FF9800</color>            <!-- Orange 500 -->
 
-    <!-- Additional colors (customize if needed) -->
-    <color name="colorBackground">#FFFFFF</color>     <!-- White background -->
-    <color name="colorTextPrimary">#212121</color>    <!-- Primary text -->
-    <color name="colorTextSecondary">#757575</color>  <!-- Secondary text -->
+    <!-- Background colors -->
+    <color name="background_app">#FFFFFF</color>          <!-- White background for app -->
+    <color name="background_status_bar">#F57C00</color>   <!-- Darker orange for status bar -->
+    <color name="colorBackground">#FFFFFF</color>         <!-- Default background (white) -->
 
-    <!-- UI element color example -->
-    <color name="colorButtonNormal">#FF9800</color>   <!-- Orange button -->
+    <!-- Divider -->
+    <color name="divider">#DADADA</color>                  <!-- Light gray divider -->
+
+    <!-- Text colors -->
+    <color name="colorTextPrimary">#212121</color>        <!-- Dark gray for main text -->
+    <color name="colorTextSecondary">#757575</color>      <!-- Medium gray for secondary text -->
+
+    <!-- Additional UI elements -->
+    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange button color -->
+
+    <!-- Add any other colors your project references here -->
 </resources>
