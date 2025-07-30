@@ -6,22 +6,25 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "net.kdt.pojavlaunch" // Update this if your package differs
+        applicationId "net.kdt.pojavlaunch" // Change if your package is different
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
-        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // Uncomment if needed
+
+        // If you have instrumentation tests, uncomment:
+        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Uncomment if needed
+            // Uncomment and configure if you use ProGuard:
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
-    // Optional Java/Kotlin config: uncomment and adjust if needed
+    // Optional Java compatibility config (modify or uncomment as necessary)
     // compileOptions {
     //     sourceCompatibility JavaVersion.VERSION_11
     //     targetCompatibility JavaVersion.VERSION_11
@@ -31,9 +34,9 @@ android {
 dependencies {
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
     implementation 'commons-codec:commons-codec:1.15'
-    // implementation 'com.wu-man:android-bsf-api:3.1.3' // Keep commented if not used
+    // implementation 'com.wu-man:android-bsf-api:3.1.3' // Uncomment if used
     implementation 'androidx.preference:preference:1.2.0'
-    // implementation 'androidx.core:core:1.7.0' // Uncomment if needed
+    // implementation 'androidx.core:core:1.7.0' // Uncomment if used
     implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
     implementation 'androidx.annotation:annotation:1.5.0'
@@ -47,8 +50,8 @@ dependencies {
     implementation 'com.github.Mathias-Boulay:android_gamepad_remapper:2.0.3'
     implementation 'com.github.Mathias-Boulay:virtual-joystick-android:1.14'
 
-    // implementation 'com.intuit.sdp:sdp-android:1.0.5'
-    // implementation 'com.intuit.ssp:ssp-android:1.0.5'
+    // implementation 'com.intuit.sdp:sdp-android:1.0.5' // Uncomment if used
+    // implementation 'com.intuit.ssp:ssp-android:1.0.5' // Uncomment if used
 
     implementation 'org.tukaani:xz:1.8'
     // Our version of exp4j can be built from source at:
@@ -56,7 +59,7 @@ dependencies {
     implementation 'net.sourceforge.htmlcleaner:htmlcleaner:2.6.1'
     implementation 'com.bytedance:bytehook:1.0.9'
 
-    // implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.7.0'
+    // implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.7.0' // Uncomment if used
 
     implementation 'top.fifthlight.touchcontroller:proxy-client-android:0.0.4'
 
@@ -64,6 +67,6 @@ dependencies {
 
     implementation project(":MobileGlues")
 
-    // --- MATERIAL COMPONENTS DEPENDENCY FOR YOUR THEME SUPPORT ---
+    // Material Components library (required for your Material theme)
     implementation 'com.google.android.material:material:1.9.0'
 }
