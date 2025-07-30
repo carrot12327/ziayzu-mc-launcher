@@ -68,9 +68,7 @@ jobs:
       - name: Build JRE JAR files
         run: |
           ./scripts/languagelist_updater.sh
-
           mkdir -p out
-          # Build JRE JAR files (security manager, etc...)
           ./gradlew :jre_lwjgl3glfw:build --no-daemon
 
       - name: Set up JDK 17
@@ -80,20 +78,18 @@ jobs:
           java-version: '17'
 
       - name: Build Google Play .aab
-        # You can remove or comment this 'if:' line to test on any branch
-        if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
+        if: github.repository_owner == 'carrot12327' && github.ref_name == 'v3_openjdk'
         run: |
           ./gradlew :app_pojavlauncher:bundleGplay --no-daemon
           mkdir -p out
           mv app_pojavlauncher/build/outputs/bundle/gplay/app_pojavlauncher-gplay.aab out/app-gplay.aab
 
       - name: Verify .aab file exists
-        if: success() && github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
+        if: success() && github.repository_owner == 'carrot12327' && github.ref_name == 'v3_openjdk'
         run: ls -lh out/
 
       - name: Build Debug .apk
         run: |
-          # Build the launcher
           ./gradlew :app_pojavlauncher:assembleDebug --no-daemon
           mkdir -p out
           mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug.apk
@@ -126,7 +122,7 @@ jobs:
 
       - name: Upload onto the Google Play testing track
         continue-on-error: true
-        if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
+        if: github.repository_owner == 'carrot12327' && github.ref_name == 'v3_openjdk'
         uses: r0adkll/upload-google-play@v1.1.2
         with:
           serviceAccountJsonPlainText: ${{ secrets.GPLAY_SERVICE_JSON }}
