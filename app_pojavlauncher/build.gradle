@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace "net.kdt.pojavlaunch"  // ← CRITICAL FIX: This was missing and causing build failure
+    namespace "net.kdt.pojavlaunch"  // ← CRITICAL: This must be present
     compileSdkVersion 33
 
     defaultConfig {
@@ -34,7 +34,7 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.15'
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
-    implementation 'androidx.viewpager2:viewpager2:1.1.0'        // ← UPDATED: Removed -beta01
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
     implementation 'androidx.annotation:annotation:1.5.0'
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 
@@ -53,6 +53,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation project(":MobileGlues")
 
-    // Material Components library - UPDATED to latest stable version
-    implementation 'com.google.android.material:material:1.12.0'  // ← UPDATED: From 1.9.0
+    implementation 'com.google.android.material:material:1.12.0'
 }
