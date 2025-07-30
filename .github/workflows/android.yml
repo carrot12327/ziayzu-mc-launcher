@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest  # ← CHANGED: Use latest instead of 20.04
 
     steps:
     - name: Checkout repository
@@ -20,30 +20,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-      
-    - name: Cache Gradle dependencies
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
-          
     - name: Make gradlew executable
       run: chmod +x gradlew
       
-    - name: Clean project
-      run: ./gradlew clean --no-daemon --stacktrace
-      
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --no-daemon --stacktrace --refresh-dependencies
-      continue-on-error: false
+      run: ./gradlew clean assembleDebug --no-daemon --stacktrace
       
-    - name: Upload build artifacts
+    - name: Upload APK
       uses: actions/upload-artifact@v4
       if: success()
       with:
