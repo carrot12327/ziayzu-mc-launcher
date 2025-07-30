@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace "net.kdt.pojavlaunch"  // ← ADDED: This was missing and causing the build failure
+    namespace "net.kdt.pojavlaunch"  // ← CRITICAL FIX: This was missing and causing build failure
     compileSdkVersion 33
 
     defaultConfig {
@@ -13,19 +13,16 @@ android {
         versionCode 1
         versionName "1.0"
 
-        // If you have instrumentation tests, uncomment:
-        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            // Uncomment and configure if you use ProGuard:
-            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
-    // Added Java compatibility config for better compatibility
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -37,7 +34,7 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.15'
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
-    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'        // ← UPDATED: Removed -beta01
     implementation 'androidx.annotation:annotation:1.5.0'
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 
@@ -56,6 +53,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation project(":MobileGlues")
 
-    // Material Components library (required for your Material theme)
-    implementation 'com.google.android.material:material:1.9.0'
+    // Material Components library - UPDATED to latest stable version
+    implementation 'com.google.android.material:material:1.12.0'  // ← UPDATED: From 1.9.0
 }
