@@ -1,24 +1,28 @@
 <resources>
     <!-- Main App Theme using Material Components -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Primary theme colors defined in colors.xml -->
+        <!-- Core color definitions -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Material Components required color on attributes -->
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnSecondary">@android:color/white</item>
         <item name="colorOnBackground">@android:color/black</item>
+
+        <!-- Window backgrounds -->
         <item name="android:windowBackground">@color/background_app</item>
         <item name="android:statusBarColor">@color/background_status_bar</item>
     </style>
 
-    <!-- Orange Toolbar Style (optional improvement) -->
+    <!-- Optional: Orange Toolbar Style -->
     <style name="OrangeToolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">@color/colorPrimary</item>
         <item name="titleTextColor">@android:color/white</item>
     </style>
 
-    <!-- Orange Button Style (optional) -->
+    <!-- Optional: Orange Button Style -->
     <style name="OrangeButton" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/colorButtonNormal</item>
         <item name="android:textColor">@android:color/white</item>
