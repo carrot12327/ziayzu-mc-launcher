@@ -6,24 +6,22 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "net.kdt.pojavlaunch" // Adjust if your package is different
+        applicationId "net.kdt.pojavlaunch" // Update this if your package differs
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
-
-        // Other configurations if needed, e.g.:
-        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // Uncomment if needed
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Uncomment if using ProGuard
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Uncomment if needed
         }
     }
 
-    // Optional: Java or Kotlin options (adjust if you use Kotlin or special JVM settings)
+    // Optional Java/Kotlin config: uncomment and adjust if needed
     // compileOptions {
     //     sourceCompatibility JavaVersion.VERSION_11
     //     targetCompatibility JavaVersion.VERSION_11
@@ -53,7 +51,7 @@ dependencies {
     // implementation 'com.intuit.ssp:ssp-android:1.0.5'
 
     implementation 'org.tukaani:xz:1.8'
-    // Our version of exp4j can be built from source at
+    // Our version of exp4j can be built from source at:
     // https://github.com/PojavLauncherTeam/exp4j
     implementation 'net.sourceforge.htmlcleaner:htmlcleaner:2.6.1'
     implementation 'com.bytedance:bytehook:1.0.9'
@@ -66,6 +64,6 @@ dependencies {
 
     implementation project(":MobileGlues")
 
-    // --- IMPORTANT: Material Components Library for Material Theme support ---
+    // --- MATERIAL COMPONENTS DEPENDENCY FOR YOUR THEME SUPPORT ---
     implementation 'com.google.android.material:material:1.9.0'
 }
