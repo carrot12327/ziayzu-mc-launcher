@@ -1,39 +1,20 @@
 buildscript {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
-        gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:7.3.1'
     }
 }
 
 allprojects {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
-        maven { 
-            url 'https://www.jitpack.io'
-            content {
-                includeGroupByRegex("com\\.github.*")
-            }
-        }
     }
 }
 
-tasks.register('clean', Delete) {
+task clean(type: Delete) {
     delete rootProject.buildDir
 }
