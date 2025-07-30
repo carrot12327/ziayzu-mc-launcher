@@ -1,29 +1,26 @@
 <resources>
-    <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Set primary, dark, and accent colors using your orange definitions -->
+    <!-- Main App Theme using Material Components -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary theme colors defined in colors.xml -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!-- Optionally set background and button colors if you have them in colors.xml -->
-        <item name="android:windowBackground">@color/background_app</item>
-        <item name="android:statusBarColor">@color/background_status_bar</item>
-        <item name="android:buttonStyle">@style/OrangeButton</item>
-        <!-- Material component support (optional) -->
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnSecondary">@android:color/white</item>
-        <item name="colorOnBackground">@color/colorTextPrimary</item>
+        <item name="colorOnBackground">@android:color/black</item>
+        <item name="android:windowBackground">@color/background_app</item>
+        <item name="android:statusBarColor">@color/background_status_bar</item>
     </style>
 
-    <!-- Optional: orange button style if you want your buttons orange -->
-    <style name="OrangeButton" parent="Widget.AppCompat.Button">
-        <item name="android:backgroundTint">@color/colorButtonNormal</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
-
-    <!-- Optional: toolbar color -->
-    <style name="OrangeToolbar" parent="Widget.AppCompat.Toolbar">
+    <!-- Orange Toolbar Style (optional improvement) -->
+    <style name="OrangeToolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">@color/colorPrimary</item>
         <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <!-- Orange Button Style (optional) -->
+    <style name="OrangeButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorButtonNormal</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>
