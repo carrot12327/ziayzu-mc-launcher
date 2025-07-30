@@ -14,6 +14,9 @@ echo "Starting language list update..."
 echo "Script directory: $THISDIR"
 echo "Target language file: $LANGFILE"
 
+# Create assets directory if it doesn't exist
+mkdir -p "$(dirname "$LANGFILE")"
+
 # Remove existing language file if it exists
 if [ -f "$LANGFILE" ]; then
     rm -f "$LANGFILE"
