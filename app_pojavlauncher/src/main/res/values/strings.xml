@@ -1,293 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- App name part -->
-    <string name="app_name">Ziayzu Mc</string>
+<resources>
+    <string name="app_name">PojavLauncher</string>
+    <string name="app_short_name">PojavLauncher</string>
 
-    <!-- Action bar part -->
+    <string name="alerttitle_installmod">Install mod</string>
+    <string name="alerttitle_selectaccount">Select account</string>
+    <string name="alerttitle_sign_in_failed">Sign in failed</string>
+    <string name="alerttitle_microsoftaccount">Microsoft account</string>
 
-    <!-- Languages list part -->
+    <string name="mcl_setting_title">Launcher settings</string>
+    <string name="mcl_setting_subtitle">Launcher and account management</string>
+    <string name="mcl_launch_title">Launch options</string>
+    <string name="mcl_launch_subtitle">Game directory and Java/Forge settings</string>
 
-    <!-- Login strings -->
-    <string name="login_online_username_hint">Username</string>
-    <string name="login_online_login_label">Login</string>
+    <string name="mcn_check_fail_internet">Failed to connect to Internet, please check your Internet connection.</string>
+    <string name="mcn_check_fail_localmod">Failed to check local mod compatibility</string>
 
-    <!-- Hint -->
-    <string name="hint_control_mapping">"Touch the top center cogwheel to open the context menu ⚙\nTap a button to customize: edit, resize, remove, or change its keybinds."</string>
+    <string name="mcl_memory_max">Maximum memory (MB)</string>
+    <string name="mcl_memory_min">Minimum memory (MB) - unused</string>
+    <string name="mcl_realdatadirectory">Use external storage</string>
 
-    <!-- Warnings -->
-    <string name="warning_remove_account">This account will be removed!</string>
+    <string name="preference_category_general">General</string>
+    <string name="preference_category_video">Video</string>
+    <string name="preference_category_control">Controls</string>
+    <string name="preference_category_debug">Debug</string>
+    <string name="preference_category_footer">Footer</string>
 
-    <!-- AlertDialog title -->
-    <string name="alerttitle_installmod">Select a mod installer</string>
+    <string name="pref_daydreamfix">Disable Daydream keyboard</string>
+    <string name="pref_daydreamfix_subtitle">Fixes typing issues on some Samsung devices</string>
 
-    <!-- Error messages -->
-    <string name="error_fatal">Amethyst has unexpectedly crashed</string>
-    <string name="error_no_version">No version!</string>
-    <string name="error_show_more">Show more</string>
-    <string name="error_show_less">Show less</string>
+    <string name="pref_longpress_delay">Button hold delay</string>
+    <string name="pref_longpress_delay_subtitle">Delay for turning a button press into a hold</string>
 
-    <!-- Toast messages -->
-    <string name="toast_permission_denied">The read/write to storage permission is required!</string>
-    <string name="toast_optifine_success">Install successful</string>
-    <!--
-    <string name="toast_3">Exit</string>
-    -->
+    <string name="pref_buttonsize">Button scale (%)</string>
+    <string name="pref_buttonsize_subtitle">Size multiplier for on-screen buttons</string>
 
-    <!-- MCLauncherActivity: Tabs -->
-    <string name="mcl_tab_wiki">Wiki</string>
+    <string name="pref_mousescale">Mouse sensitivity (%)</string>
+    <string name="pref_mousescale_subtitle">Sensitivity multiplier for mouse movement</string>
 
-    <!-- MCLauncherActivity: Account status -->
+    <string name="pref_gyroSampleRate">Gyroscope sample rate</string>
+    <string name="pref_gyroSampleRate_subtitle">Sample rate for gyroscope input</string>
 
-    <!-- MCLauncherActivity: Strings -->
-    <string name="mcl_launch_cleancache">Cleaning cache files</string>
-    <string name="mcl_launch_downloading">Downloading %s</string>
-    <string name="mcl_launch_downloading_progress">"Downloading %s (%.2f MB / %.2f MB)"</string>
-    <string name="mcl_launch_download_assets">Preparing to download resources</string>
+    <string name="pref_gyroSmoothing">Gyroscope smoothing</string>
+    <string name="pref_gyroSmoothing_subtitle">Amount of smoothing applied to gyroscope input</string>
 
-    <string name="mcl_options">Options</string>
-    <string name="mcl_option_customcontrol">Custom controls</string>
+    <string name="pref_gyroInvertX">Invert gyroscope X</string>
+    <string name="pref_gyroInvertX_subtitle">Invert the X axis of gyroscope input</string>
 
+    <string name="pref_gyroInvertY">Invert gyroscope Y</string>
+    <string name="pref_gyroInvertY_subtitle">Invert the Y axis of gyroscope input</string>
 
-    <string name="mcl_setting_title_use_surface_view">Use alternate surface rendering</string>
-    <string name="mcl_setting_subtitle_use_surface_view">May help performance in GPU bound scenarios.</string>
-    <string name="mcl_setting_title_ignore_notch">Ignore notch</string>
-    <string name="mcl_setting_subtitle_ignore_notch">Ignores the notch and extends the screen under it.\nGives you a more immersive experience.</string>
-    <string name="mcl_setting_title_resolution_scaler">Resolution Scaler</string>
-    <string name="mcl_setting_subtitle_resolution_scaler">Allows you to decrease the game resolution. 100% is full resolution.</string>
-    <string name="mcl_setting_title_longpresstrigger">Trigger long press delay</string>
-    <string name="mcl_setting_subtitle_longpresstrigger">Change long press trigger delay for destroying blocks and dropping items.</string>
-    <string name="mcl_setting_title_buttonscale">Control buttons scaling</string>
-    <string name="mcl_setting_subtitle_buttonscale">Upscale them if the buttons are too small.</string>
-    <string name="mcl_setting_title_mousescale">Mouse scaling</string>
-    <string name="mcl_setting_subtitle_mousescale">Change the size of the virtual mouse.</string>
-    <string name="mcl_setting_title_javaargs">JVM Launch arguments</string>
-    <string name="mcl_setting_subtitle_javaargs">Be careful, this may make game crash if modified without knowledge.</string>
-    <string name="mcl_setting_title_renderer_settings">Extra Renderer Settings</string>
-    <string name="mcl_setting_title_renderer_subtitle">Renderer specific settings</string>
-    <string name="mcl_setting_category_renderer">Renderer</string>
-    <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (1.21.4&lt; only, fast)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
-    <string name="mcl_setting_renderer_mobileglues">MobileGlues (OpenGL ES) - (1.17+ only, fast)</string>
-    <string name="mcl_setting_renderer_ltw">LTW (OpenGL ES 3) - 1.17+ only</string>
-    <string name="mcl_setting_veroption_release">Release</string>
-    <string name="mcl_setting_veroption_snapshot">Snapshot</string>
-    <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>
-    <string name="mcl_setting_veroption_oldbeta">Old-beta</string>
-    <string name="mcl_setting_java_sandbox">Sandbox .jar execution</string>
-    <string name="mcl_setting_java_sandbox_subtitle">Control the availability of the sandbox security manager when executing a .jar file.</string>
-    <string name="mcl_version_clone">Clone</string>
+    <string name="pref_gyroSensitivity">Gyroscope sensitivity (%)</string>
+    <string name="pref_gyroSensitivity_subtitle">Sensitivity multiplier for gyroscope movement</string>
 
-    <!-- Global strings -->
-    <string name="global_edit">Edit</string>
-    <string name="global_error">Error</string>
-    <string name="global_load">Load</string>
-    <string name="global_name">Name</string>
-    <string name="global_remove">Remove</string>
-    <string name="global_clone">Clone</string>
-    <string name="global_restart">Restart</string>
-    <string name="global_save">Save</string>
-    <string name="global_unpacking">Unpacking %s</string>
-    <string name="global_error_field_empty">This field can\'t be empty</string>
-    <string name="global_waiting">Wait</string>
-    <string name="global_select">Select</string>
-    <string name="global_retry">Retry</string>
-    <string name="global_default">Default</string>
-    <string name="global_off">Off</string>
+    <string name="pref_deadzone_scale">Deadzone scale (%)</string>
+    <string name="pref_deadzone_scale_subtitle">Size multiplier for controller stick deadzones</string>
 
-    <!-- MainActivity: strings -->
-    <string name="mcn_exit_title">Application/Game exited with code %d, check latestlog.txt for more details.</string>
-    <string name="mcn_signal_title">Application/Game aborted by fatal signal %d, check latestlog.txt for more details.</string>
-    <string name="mcn_exit_confirm">Are you sure want to force close?</string>
-    <string name="mcn_check_fail_vulkan_support">Zink (Vulkan) renderer is not supported on this device!</string>
+    <string name="pref_rendererdebug_subtitle">Show renderer debug information</string>
+    <string name="pref_rendererdebug">Show renderer debug info</string>
 
-    <!-- MainActivity: Control buttons -->
-    <string name="control_chat">Chat</string>
-    <string name="control_debug">Debug</string>
-    <string name="control_primary">Pri</string>
-    <string name="control_secondary">Sec</string>
-    <string name="control_shift">◇</string>
-    <string name="control_inventory">Inv</string>
-    <string name="control_up">▲</string>
-    <string name="control_left">◀</string>
-    <string name="control_right">▶</string>
-    <string name="control_down">▼</string>
-    <string name="control_jump">⬛</string>
-    <string name="control_thirdperson">3rd</string>
-    <string name="control_listplayers">Tab</string>
-    <string name="control_mouse">Mouse</string>
-    <string name="control_mouseoff">Mouse: off</string>
-    <string name="control_mouseon">Mouse: on </string>
+    <string name="pref_buttonopacity">Button opacity (%)</string>
+    <string name="pref_buttonopacity_subtitle">Transparency level for on-screen buttons</string>
 
-    <!-- MainActivity: Menu advanced controls -->
-    <string name="control_forceclose">Force close</string>
-    <string name="control_viewout">Log output</string>
-    <string name="control_adebug">Input Debug</string>
-    <string name="control_customkey">Send custom keycode</string>
+    <string name="pref_mousespeed_subtitle">Mouse movement speed multiplier</string>
+    <string name="pref_mousespeed">Mouse speed (%)</string>
 
-    <!-- ImportControlActivity Strings -->
-    <string name="import_control_label">Import controls</string>
-    <string name="import_control_invalid_file">Invalid or corrupted file</string>
-    <string name="import_control_import_button">import controls</string>
-    <string name="import_control_verifying_file">File is being verified, please wait and try again…</string>
-    <string name="import_control_invalid_name">Invalid name or file already exists</string>
-    <string name="import_control_done">Importation done</string>
-    <!--
-    <string name="control_more3"></string>
-    <string name="control_more4"></string>
--->
+    <string name="pref_customcontrols">Customize controls</string>
+    <string name="pref_customcontrols_subtitle">Create and edit control layouts</string>
 
-    <string name="customctrl_toggle">Toggleable</string>
-    <string name="customctrl_size">Size</string>
+    <string name="pref_autoram">Auto set RAM</string>
+    <string name="pref_autoram_subtitle">Enable automatic RAM allocation</string>
 
-    <string name="customctrl_mapping">Mapping</string>
-    <string name="customctrl_orientation">Orientation</string>
-    <string name="customctrl_background_color">Background color</string>
-    <string name="customctrl_corner_radius">Corner radius</string>
-    <string name="customctrl_stroke_width">Stroke width</string>
-    <string name="customctrl_stroke_color">Stroke color</string>
+    <string name="pref_java_home_subtitle">Auto-detect or manually select Java runtime</string>
+    <string name="pref_java_home">Java runtime</string>
 
-    <string name="customctrl_button_opacity">Button Opacity</string>
+    <string name="pref_check_libraries">Verify game files</string>
+    <string name="pref_check_libraries_subtitle">Check and re-download missing game files</string>
+
+    <string name="pref_disable_gestures">Disable Android gestures</string>
+    <string name="pref_disable_gestures_subtitle">Disable system navigation gestures while playing</string>
+
+    <string name="pref_force_english">Force English</string>
+    <string name="pref_force_english_subtitle">Force the game to use English language</string>
+
+    <string name="pref_verify_manifest">Verify manifest</string>
+    <string name="pref_verify_manifest_subtitle">Check game file integrity before launch</string>
+
+    <string name="pref_disable_swap">Disable memory swap</string>
+    <string name="pref_disable_swap_subtitle">Disable virtual memory swapping</string>
+
+    <string name="pref_zinkpreferSystemDriver">Prefer system driver (Zink)</string>
+    <string name="pref_zinkpreferSystemDriver_subtitle">Use system graphics driver when available</string>
+
+    <string name="pref_spare_cpu_cycles">Use spare CPU cycles</string>
+    <string name="pref_spare_cpu_cycles_subtitle">Allow game to use additional CPU power when available</string>
+
+    <string name="pref_force_vsync">Force VSync</string>
+    <string name="pref_force_vsync_subtitle">Force vertical synchronization to reduce screen tearing</string>
+
+    <string name="pref_mouse_start">Start with mouse</string>
+    <string name="pref_mouse_start_subtitle">Start the game with mouse input enabled</string>
+
+    <string name="pref_virtual_mouse_start">Start with virtual mouse</string>
+    <string name="pref_virtual_mouse_start_subtitle">Start the game with virtual mouse enabled</string>
+
+    <string name="pref_big_core_affinity">Use performance cores</string>
+    <string name="pref_big_core_affinity_subtitle">Prefer high-performance CPU cores when available</string>
+
+    <string name="pref_sustained_performance">Sustained performance mode</string>
+    <string name="pref_sustained_performance_subtitle">Maintain consistent performance at the cost of peak performance</string>
+
+    <string name="pref_gamepad_quadrant_joystick">Virtual joystick</string>
+    <string name="pref_gamepad_quadrant_joystick_subtitle">Show virtual joystick in specified corner</string>
+
+    <string name="pref_disable_swap_subtitle">May improve performance on devices with limited storage</string>
+
+    <string name="pref_renderer">Renderer</string>
+    <string name="pref_renderer_subtitle">Graphics rendering backend</string>
+
+    <string name="pref_renderer_exp_setup">Experimental renderers may be unstable and cause crashes. You may need to clear launcher data after changing this setting.</string>
+
+    <string name="pref_notch_pos">Notch position</string>
+    <string name="pref_notch_pos_subtitle">Screen notch/cutout position for proper UI adjustment</string>
+
+    <string name="pref_notch_pos_auto">Auto</string>
+    <string name="pref_notch_pos_left">Left</string>
+    <string name="pref_notch_pos_top">Top</string>
+    <string name="pref_notch_pos_right">Right</string>
+    <string name="pref_notch_pos_bottom">Bottom</string>
+
+    <string name="pref_buttonAllCaps">Uppercase button text</string>
+    <string name="pref_buttonAllCaps_subtitle">Display button text in uppercase letters</string>
+
+    <string name="pref_dumpShaders">Dump shaders (debug)</string>
+    <string name="pref_dumpShaders_subtitle">Save shader information for debugging</string>
+
+    <string name="pref_java_sandbox">Java sandbox</string>
+    <string name="pref_java_sandbox_subtitle">Enable Java security sandbox (may cause issues)</string>
+
+    <string name="pref_skip_notification_permission_check">Skip notification permission</string>
+    <string name="pref_skip_notification_permission_check_subtitle">Don\'t request notification permissions</string>
+
+    <string name="pref_use_system_loadlibrary">Use system loadLibrary</string>
+    <string name="pref_use_system_loadlibrary_subtitle">Use system library loading method</string>
+
+    <string name="pref_force_igl">Force angle driver</string>
+    <string name="pref_force_igl_subtitle">Force use of ANGLE graphics driver</string>
+
+    <string name="pref_vsync_in_zink">VSync in Zink</string>
+    <string name="pref_vsync_in_zink_subtitle">Enable vertical sync in Zink renderer</string>
+
+    <string name="pref_cosmetica">Cosmetica</string>
+    <string name="pref_cosmetica_subtitle">Enable Cosmetica cosmetics system</string>
+
+    <string name="pref_loader_override">Override loader detection</string>
+    <string name="pref_loader_override_subtitle">Override automatic mod loader detection</string>
+
+    <string name="pref_loader_override_fabric">Fabric</string>
+    <string name="pref_loader_override_forge">Forge</string>
+    <string name="pref_loader_override_quilt">Quilt</string>
+
+    <string name="pref_custom_opengl_libname">Custom OpenGL lib name</string>
+    <string name="pref_custom_opengl_libname_subtitle">Specify custom OpenGL library name</string>
+
+    <string name="pref_custom_mesa_version">Custom Mesa version</string>
+    <string name="pref_custom_mesa_version_subtitle">Specify custom Mesa driver version</string>
+
+    <string name="pref_mesa_gl_version">Mesa GL version override</string>
+    <string name="pref_mesa_gl_version_subtitle">Override OpenGL version reported by Mesa</string>
+
+    <string name="pref_mesa_glsl_version">Mesa GLSL version override</string>
+    <string name="pref_mesa_glsl_version_subtitle">Override GLSL version reported by Mesa</string>
+
+    <string name="pref_ignoreNotch">Ignore notch</string>
+    <string name="pref_ignoreNotch_subtitle">Ignore screen notch/cutout in fullscreen</string>
+
+    <string name="pref_fullscreen_game">Fullscreen</string>
+    <string name="pref_fullscreen_game_subtitle">Hide system UI while playing</string>
+
+    <string name="pref_resizable">Resizable</string>
+    <string name="pref_resizable_subtitle">Allow window resizing (experimental)</string>
+
+    <string name="pref_arc_capes">ArcCapes</string>
+    <string name="pref_arc_capes_subtitle">Enable ArcCapes cosmetics system</string>
+
+    <string name="pref_custom_env_vars">Custom environment variables</string>
+    <string name="pref_custom_env_vars_subtitle">Set custom environment variables for the game</string>
+
+    <string name="multirt_config_title">Java runtime configuration</string>
+    <string name="multirt_config_subtitle">Manage multiple Java runtime installations</string>
+
+    <string name="multirt_config_add">Add runtime</string>
+    <string name="multirt_config_add_subtitle">Install a new Java runtime</string>
+
+    <string name="multirt_config_remove">Remove runtime</string>
+    <string name="multirt_config_remove_subtitle">Uninstall selected Java runtime</string>
+
+    <string name="multirt_config_install">Install</string>
+    <string name="multirt_config_install_subtitle">Download and install Java runtime</string>
+
+    <string name="multirt_runtime_corrupt">Runtime corrupted</string>
+    <string name="multirt_runtime_corrupt_subtitle">Runtime files are damaged and need reinstallation</string>
+
+    <string name="multirt_nocompatiblert">No compatible runtime</string>
+    <string name="multirt_nocompatiblert_subtitle">No Java runtime compatible with this Minecraft version</string>
+
+    <string name="multirt_progress_downloading">Downloading</string>
+    <string name="multirt_progress_extracting">Extracting</string>
+    <string name="multirt_progress_installing">Installing</string>
 
     <string name="customctrl_addbutton">Add button</string>
-    <string name="customctrl_addbutton_drawer">Add button drawer</string>
-    <string name="customctrl_addbutton_joystick">Add joystick</string>
-    <string name="customctrl_addsubbutton">Add sub-button</string>
+    <string name="customctrl_selectdefault">Select default</string>
+    <string name="customctrl_export">Export</string>
+    <string name="customctrl_import">Import</string>
+    <string name="customctrl_moveup">Move up</string>
+    <string name="customctrl_movedown">Move down</string>
+    <string name="customctrl_removeselected">Remove selected</string>
+    <string name="customctrl_mouse_passed">Cursor passed through</string>
+    <string name="customctrl_mouse_not_passed">Cursor not passed through</string>
 
-    <string name="customctrl_selectdefault">Select default controlmap</string>
-    <string name="customctrl_export">Export controlmap</string>
+    <string name="customctrl_button_edit">Edit button</string>
+    <string name="customctrl_button_name">Button name</string>
+    <string name="customctrl_button_size">Size</string>
+    <string name="customctrl_button_opacity">Opacity</string>
+    <string name="customctrl_button_bgcolor">Background color</string>
+    <string name="customctrl_button_txtcolor">Text color</string>
+    <string name="customctrl_button_stroke_width">Stroke width</string>
+    <string name="customctrl_button_stroke_color">Stroke color</string>
+    <string name="customctrl_button_corner_radius">Corner radius</string>
+    <string name="customctrl_button_mapping">Key mapping</string>
+    <string name="customctrl_button_special_toggle">Toggle button</string>
+    <string name="customctrl_button_special_mouse">Mouse button</string>
+    <string name="customctrl_button_special_keyboard">Keyboard button</string>
 
-    <string name="main_share_logs">Share log file</string>
-    <string name="main_install_jar_file">Execute a .jar</string>
-    <string name="main_play">Play</string>
-    <string name="autoram_info_msg">Memory set to %d MB</string>
-    <string name="mcl_setting_check_libraries">Check libraries after downloading</string>
-    <string name="mcl_setting_check_libraries_subtitle">This option forces the launcher to check the library hash if it\'s available. Prevents broken downloads.</string>
-    <string name="dl_library_sha_fail">Library %s is damaged and will be redownloaded</string>
-    <string name="dl_library_sha_unknown">Library %s can\'t be checked, have to assume it\'s good</string>
-    <string name="dl_library_sha_pass">Library %s is fine and usable</string>
-    <string name="mcl_disable_gestures">Disable gestures</string>
-    <string name="mcl_disable_gestures_subtitle">Disables gestures, such as hold to break block, and tap to place a block.</string>
-    <string name="mcl_disable_swap_hand">Disable double tap to swap hands</string>
-    <string name="mcl_disable_swap_hand_subtitle">Disables double tapping on the hotbar item to swap it in the second hand.</string>
-    <string name="mcl_setting_title_mousespeed">Mouse Speed</string>
-    <string name="mcl_setting_subtitle_mousespeed">Changes the speed of the virtual mouse.</string>
-    <string name="customctrl_passthru">Mouse pass-thru</string>
-    <string name="customctrl_swipeable">Swipeable</string>
-    <string name="customctrl_forward_lock">Forward lock</string>
-    <string name="customctrl_absolute_tracking">Absolute finger tracking</string>
-    <string name="memory_warning_msg">The current amount of free RAM (%d) is lower than allocated RAM (%d), which may lead to crashes. Change the allocation if the game crashes.</string>
-    <string name="address_memory_warning_msg">The current amount of free addressable RAM space (%d) is lower than the allocated RAM (%d), which will lead to crashes. Change the allocation if the game crashes.</string>
-    <string name="mcl_memory_allocation">Memory allocation</string>
-    <string name="mcl_memory_allocation_subtitle">Controls how much memory is given to Minecraft.</string>
-    <string name="multirt_runtime_corrupt">Corrupted Java Runtime</string>
-    <string name="multirt_runtime_incompatiblearch">Incompatible architecture: %s</string>
-    <string name="multirt_config_title">Java Runtimes</string>
-    <string name="multirt_config_add">Add new</string>
-    <string name="multirt_title">Runtime Manager</string>
-    <string name="multirt_subtitle">Manage installed Java Runtimes.</string>
-    <string name="multirt_progress_caching">Caching...</string>
-    <string name="multirt_config_setdefault">Set default</string>
-    <string name="multirt_config_setdefault_already">Default</string>
-    <string name="multirt_config_removeerror_last">You must have at least one Java Runtime installed.</string>
-    <string name="multirt_nocompatiblert">Can\'t find any compatible Java Runtime. This version requires Java %d or newer.</string>
-    <string name="multirt_nojava8rt">Can\'t find Java 8. In order to use this option, you need to install Java 8.</string>
-    <string name="multirt_delete_runtime">Delete runtime</string>
-    <string name="pvc_gameDirectory">Game directory</string>
-    <string name="pvc_jvmArgs">JVM arguments</string>
+    <string name="customctrl_joystick_edit">Edit joystick</string>
+    <string name="customctrl_joystick_size">Joystick size</string>
+    <string name="customctrl_joystick_sensitivity">Sensitivity</string>
+    <string name="customctrl_joystick_deadzone">Deadzone</string>
+    <string name="customctrl_joystick_opacity">Opacity</string>
+    <string name="customctrl_joystick_bgcolor">Background color</string>
+    <string name="customctrl_joystick_stroke_width">Stroke width</string>
+    <string name="customctrl_joystick_stroke_color">Stroke color</string>
 
-    <string name="preference_mouse_start_title">Start with virtual mouse on</string>
-    <string name="preference_mouse_start_description">The virtual mouse appears at startup when this option is on.</string>
-    <string name="preference_video_title">Video and renderer</string>
-    <string name="preference_video_description">Resolution, renderer and performance</string>
-    <string name="preference_control_title">Control customization</string>
-    <string name="preference_control_description">Gestures, buttons and scaling</string>
-    <string name="preference_java_title">Java Tweaks</string>
-    <string name="preference_java_description">Java Runtimes, JVM Arguments, RAM amount and sandbox</string>
-    <string name="preference_misc_title">Miscellaneous settings</string>
-    <string name="preference_misc_description">Version list and libraries check</string>
-    <string name="preference_experimental_description">Use things there with consideration, no support</string>
-    <string name="preference_sustained_performance_title">Enable sustained performance mode</string>
-    <string name="preference_sustained_performance_description">Limit thermal throttling by limiting peak performance.</string>
-    <string name="preference_force_vsync_title">Force enable VSync</string>
-    <string name="preference_force_vsync_description">Limit thermal throttling by limiting peak performance.</string>
-    <string name="preference_force_english_title">Force language to English</string>
-    <string name="preference_force_english_description">Allows you to see original strings, as intended by developers. Requires a restart.</string>
-    <string name="preference_edit_controls_title">Edit custom controls</string>
-    <string name="preference_edit_controls_summary">Tweak the control scheme to fit your needs.</string>
+    <string name="customctrl_drawer_edit">Edit drawer</string>
+    <string name="customctrl_drawer_button_size">Button size</string>
+    <string name="customctrl_drawer_button_spacing">Button spacing</string>
+    <string name="customctrl_drawer_button_select">Select buttons</string>
 
-    <string name="preference_category_gyro_controls">Gyroscope controls</string>
-    <string name="preference_category_virtual_mouse">Virtual mouse</string>
+    <string name="customctrl_subbutton_edit">Edit sub-button</string>
 
-    <string name="preference_gyro_invert_x_axis">Invert X axis</string>
-    <string name="preference_gyro_invert_y_axis">Invert Y axis</string>
-    <string name="preference_gyro_invert_x_axis_description">Invert the horizontal axis.</string>
-    <string name="preference_gyro_invert_y_axis_description">Invert the vertical axis.</string>
-    <string name="preference_gyro_smoothing_title">Enable gyroscope smoothing</string>
-    <string name="preference_gyro_smoothing_description">Reduce jitter in exchange of latency.</string>
+    <string name="customctrl_element_button">Button</string>
+    <string name="customctrl_element_joystick">Joystick</string>
+    <string name="customctrl_element_drawer">Drawer</string>
+    <string name="customctrl_element_subbutton">Sub-button</string>
 
-    <string name="preference_back_title">Back to the last screen</string>
-    <string name="unnamed">Unnamed</string>
-    <string name="profiles_latest_snapshot">Latest snapshot</string>
-    <string name="profiles_latest_release">Latest release</string>
-    <string name="profiles_profile_name">Name</string>
-    <string name="profiles_profile_version">Version</string>
-    <string name="global_delete">Delete</string>
-    <string name="pedit_java_runtime">Java Runtime</string>
-    <string name="pedit_renderer">Renderer</string>
-    <string name="arc_capes_title">Cosmetica Capes</string>
-    <string name="arc_capes_desc">Enables capes from Cosmetica (previously Arc). For more information please visit https://cosmetica.cc. Requires OptiFine.</string>
-    <string name="color_default_hex" translatable="false">FFFF0000</string>
-    <string name="notif_channel_name">General</string>
-    <string name="notif_channel_id" translatable="false">channel_id</string>
-    <string name="lazy_service_default_title">Amethyst Foreground Service</string>
-    <string name="mcl_setting_veroption_installed">Installed</string>
-    <string name="use_global_default">(Use global default)</string>
-    <string name="default_control">Default controlmap</string>
-    <string name="progresslayout_tasks_in_progress">%d tasks in progress</string>
-    <string name="notification_terminate">Terminate</string>
-    <string name="notification_game_runs">The game is running!</string>
-    <string name="folder_dialog_create">Create</string>
-    <string name="folder_dialog_insert_name">Insert folder name</string>
-    <string name="folder_dialog_folder_exists">Folder already exists!</string>
-    <string name="preference_gamepad_remapper_title">Remap gamepad/controller</string>
-    <string name="preference_remap_controller_description">Allows you to modify the keyboard keys bound to each controller button</string>
-    <string name="mcl_button_discord">Discord</string>
-    <string name="ltw_render_distance_warning_msg">Your GPU is not capable of rendering above 7 render distance without Sodium or other similar mods. The render distance will be automatically reduced when you click "OK".</string>
-    <string name="mcl_button_open_directory">Open game directory</string>
-    <string name="discord_invite" translatable="false">https://discord.gg/5ptqkyZxEy</string>
-    <string name="local_login_bad_username_title">Unsuitable username</string>
-    <string name="local_login_bad_username_text">The username must be between 3–16 characters long, and must only contain latin letters, numbers 0–9 and underscores.</string>
-    <string name="quick_setting_title">Quick settings</string>
-    <string name="create_bta_profile">Create \"Better than Adventure!\" profile</string>
-    <string name="select_bta_version">Select \"Better than Adventure!\" version</string>
-    <string name="bta_installer_available_versions">Supported BTA versions</string>
-    <string name="bta_installer_untested_versions">Untested BTA versions</string>
-    <string name="bta_installer_nightly_versions">Nightly BTA versions</string>
-    <string name="newdl_extracting_native_libraries">Extracting native libraries (%d/%d)</string>
-    <string name="toast_not_available_demo">This is not available in demo mode</string>
+    <string name="customctrl_visibility_always">Always visible</string>
+    <string name="customctrl_visibility_ingame">In-game only</string>
+    <string name="customctrl_visibility_menu">Menu only</string>
 
-    <string name="preference_renderer_mobileglues_settings">MobileGlues Renderer Settings</string>
-    <string name="mg_renderer_glsl_cache">Max GLSL cache size</string>
-    <string name="mg_renderer_angle">Use ANGLE as driver</string>
-    <string name="mg_renderer_multidraw">Multidraw emulation mode</string>
-    <string name="mg_renderer_title_errorSetting">Error Filtering</string>
-    <string name="mg_renderer_title_timerQueryExt">Disable GPU Utilization in F3 menu</string>
-    <string name="mg_renderer_summary_timerQueryExt">Fixes random crashes when F3 is open on some Mali devices</string>
-    <string name="preference_ANGLE_only">ANGLE Only Options</string>
-    <string name="mg_renderer_title_angleDepthClearFixMode">Fix hand and held items from going through blocks</string>
-    <string name="mg_renderer_summary_angleDepthClearFixMode">Only affects ANGLE, can affect performance.</string>
-    <string name="preference_experimental_title">Experimental Stuff</string>
-    <string name="mg_renderer_title_gl43exts">Advertise Experimental OpenGL 4.3 extensions</string>
-    <string name="mg_renderer_summary_gl43exts">May help with mod crashes. Disable if not needed, can cause crashes.</string>
-    <string name="mg_renderer_title_computeShaderext">Advertise Experimental Compute Shader extension</string>
-    <string name="mg_renderer_summary_computeShaderext">May help with shaderpack glitches. Disable if not needed, can cause crashes.</string>
-    <string name="mg_renderer_title_multidrawCompute">Use Compute Multidraw Emulation</string>
-    <string name="mg_renderer_summary_multidrawCompute">Uses compute shaders for multidraw emulation</string>
-    <string name="app_short_name">Ziayzu Launcher</string>
-    <string name="demo_versions_supported">Only Vanilla 1.3.1 and above are supported on demo accounts</string>
-    <string name="demo_unsupported">Demo Profile not supported</string>
-    <string name="change_account">Please change accounts to use this function</string>
-    <string name="no_minecraft_account_found">No Minecraft Account Found</string>
-    <string name="feature_requires_java_account">This feature requires a Microsoft account that owns Minecraft Java Edition.</string>
-    <string name="delete_account_and_login">Delete account and log in</string>
-    <s
+    <string name="customctrl_orientation_portrait">Portrait</string>
+    <string name="customctrl_orientation_landscape">Landscape</string>
+    <string name="customctrl_orientation_square">Square</string>
+
+    <string name="customctrl_controllername">Control name</string>
+    <string name="customctrl_invalid_name">Invalid name</string>
+
+    <string name="customctrl_add_subbutton">Add sub-button</string>
+    <string name="customctrl_remove_subbutton">Remove sub-button</string>
+
+    <string name="init_login_add_account">Add account</string>
+    <string name="init_login_local_account">Local account</string>
+    <string name="init_login_microsoft_account">Microsoft account</string>
+
+    <string name="init_login_add_local_account">Add local account</string>
+    <string name="init_login_add_microsoft_account">Add Microsoft account</string>
+
+    <string name="init_login_username">Username</string>
+    <string name="init_login_password">Password</string>
+
+    <string name="init_login_error_name_not_printable">Username contains non-printable characters</string>
+    <string name="init_login_error_name_too_long">Username is too long</string>
+    <string name="init_login_error_name_too_short">Username is too short</string>
+
+    <string name="init_login_progress_offline_login">Logging in offline…</string>
+    <string name="init_login_progress_msa_login">Logging in with Microsoft…</string>
+
+    <string name="of_options">OptiFine options</string>
+    <string name="of_options_subtitle">OptiFine specific settings</string>
+
+    <string name="launcher_profiles_title">Launcher profiles</string>
+    <string name="launcher_profiles_subtitle">Manage game launch profiles</string>
+
+    <string name="profiles_profile_add">Add profile</string>
+    <string name="profiles_profile_copy">Copy profile</string>
+    <string name="profiles_profile_edit">Edit profile</string>
+    <string name="profiles_profile_delete">Delete profile</string>
+
+    <string name="profiles_profile_name">Profile name</string>
+    <string name="profiles_profile_version">Game version</string>
+    <string name="profiles_profile_path">Game directory</string>
+    <string name="profiles_profile_args">JVM arguments</string>
+    <string name="profiles_profile_java_exec">Java executable</string>
+
+    <string name="profiles_path_auto">Auto</string>
+    <string name="profiles_path_launcher">Launcher directory</string>
+    <string name="profiles_path_custom">Custom directory</string>
+
+    <string name="profiles_profile_invalid_name">Invalid profile name</string>
+    <string name="profiles_profile_name_exists">Profile name already exists</string>
+
+    <string name="install_select_target">Select installation target</string>
+    <string name="install_select_target_subtitle">Choose where to install the game version</string>
+
+    <string name="install_vanilla">Install vanilla</string>
+    <string name="install_vanilla_subtitle">Install the base game without modifications</string>
+
+    <string name="install_fabric">Install Fabric</string>
+    <string name="install_fabric_subtitle">Install Fabric mod loader</string>
+
+    <string name="install_forge">Install Forge</string>
+    <string name="install_forge_subtitle">Install Forge mod loader</string>
+
+    <string name="install_quilt">Install Quilt</string>
+    <string name="install_quilt_subtitle">Install Quilt mod loader</string>
+
+    <string name="install_optifine">Install OptiFine</string>
+    <string name="install_optifine_subtitle">Install OptiFine graphics enhancement</string>
+
+    <string name="install_liteloader">Install LiteLoader</string>
+    <string name="install_liteloader_subtitle">Install LiteLoader mod system</string>
+
+    <string name="install_download_complete">Download complete</string>
+    <string name="install_download_failed">Download failed</string>
+
+    <string name="install_progress_downloading">Downloading…</string>
+    <string name="install_progress_installing">Installing…</string>
+    <string name="install_progress_extracting">Extracting…</string>
+    <string name="install_progress_patching">Patching…</string>
+
+    <string name="install_version_already_exists">Version already exists</string>
+    <string name="install_version_corrupted">Version files corrupted</string>
+
+    <string name="fcl_install_modpack">Install modpack</string>
+    <string name="fcl_install_modpack_subtitle">Install a modpack from file</string>
+
+    <string name="fcl_install_modpack_curseforge">CurseForge modpack</string>
+    <string name="fcl_install_modpack_modrinth">Modrinth modpack</string>
+    <string name="fcl_install_modpack_multimc">MultiMC modpack</string>
+
+    <string name="fcl_install_modpack_downloading_metadata">Downloading metadata…</string>
+    <string name="fcl_install_modpack_downloading_mods">Downloading mods…</string>
+    <string name="fcl_install_modpack_installing_modpack">Installing modpack…</string>
+
+    <string name="fcl_install_modpack_failed_download_metadata">Failed to download modpack metadata</string>
+    <string name="fcl_install_modpack_failed_download_mod">Failed to download mod</string>
+    <string name="fcl_install_modpack_failed_install">Failed to install modpack</string>
+
+    <string name="value_true">Enabled</string>
+    <string name="value_false">Disabled</string>
+
+    <string name="generic_waiting">Please wait…</string>
+    <string name="generic_error">Error</string>
+    <string name="generic_success">Success</string>
+    <string name="generic_warning">Warning</string>
+    <string name="generic_info">Information</string>
+
+    <string name="generic_add">Add</string>
+    <string name="generic_remove">Remove</string
