@@ -291,7 +291,8 @@
     <string name="launcher_profiles_title">Launcher profiles</string>
     <string name="launcher_profiles_subtitle">Manage game launch profiles</string>
 
-    <string name="profiles_profile_add">Add profile</string>
+    <string name="pref_renderer_exp_setup">Experimental renderers may be unstable and cause crashes. You may need to clear launcher data after changing this setting.</string>
+    
     <string name="profiles_profile_copy">Copy profile</string>
     <string name="profiles_profile_edit">Edit profile</string>
     <string name="profiles_profile_delete">Delete profile</string>
