@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- App name part -->
-    <string name="app_name">Amethyst</string>
+    <string name="app_name">Ziayzu Mc</string>
 
     <!-- Action bar part -->
 
@@ -171,8 +171,6 @@
     <string name="mcl_disable_swap_hand_subtitle">Disables double tapping on the hotbar item to swap it in the second hand.</string>
     <string name="mcl_setting_title_mousespeed">Mouse Speed</string>
     <string name="mcl_setting_subtitle_mousespeed">Changes the speed of the virtual mouse.</string>
-    <string name="mcl_setting_title_grab_mouse">Use virtual cursor</string>
-    <string name="mcl_setting_subtitle_grab_mouse">Ensures the cursor stays inside the game. Prevents mouse from clicking touch control layout.</string>
     <string name="customctrl_passthru">Mouse pass-thru</string>
     <string name="customctrl_swipeable">Swipeable</string>
     <string name="customctrl_forward_lock">Forward lock</string>
@@ -291,4 +289,8 @@
     <string name="preference_wipe_controller_title">Reset controller mapping</string>
     <string name="preference_wipe_controller_description">Allows you to remap the controller buttons.</string>
     <string name="preference_deadzone_scale_title">Joystick deadzone scale</string>
-    <string name="preference_deadzone_scale_descripti
+    <string name="preference_deadzone_scale_description">Increase it if the joystick drifts.</string>
+
+
+    <string name="preference_force_big_core_title">Force the renderer to run on the big core</string>
+    <string name="preference_force_big_core_desc">Forces the Minecraft rend
