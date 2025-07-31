@@ -1,28 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Core Orange Theme Colors -->
-    <color name="colorPrimary">#FF9800</color>           <!-- Orange 500 -->
-    <color name="colorPrimaryDark">#F57C00</color>       <!-- Orange 700 -->
-    <color name="colorAccent">#FF9800</color>            <!-- Orange 500 -->
+    <color name="control_button_color">#4CC4C4C4</color>
+    <color name="control_button_pressed_color">#4D000000</color>
 
-    <!-- Background Colors -->
-    <color name="background_app">#FFFFFF</color>          <!-- White background for app -->
-    <color name="background_status_bar">#F57C00</color>   <!-- Orange for status bar -->
-    <color name="colorBackground">#FFFFFF</color>         <!-- Default background -->
-    <color name="background_main">#FFFFFF</color>         <!-- Another main background -->
-    <color name="background_bottom_bar">#FF9800</color>   <!-- Orange bottom bar background -->
+    <color name="minebutton_color">#9649b8</color>
+    <color name="background_app">#181818</color>
+    <color name="divider">@color/background_overlay</color>
+    <color name="background_overlay">#464646</color>
+    <color name="background_status_bar">#242424</color>
+    <color name="background_bottom_bar">#232323</color>
 
-    <!-- Dividers -->
-    <color name="divider">#DADADA</color>                  <!-- Light gray divider -->
-
-    <!-- Text Colors -->
-    <color name="colorTextPrimary">#212121</color>        <!-- Dark gray -->
-    <color name="colorTextSecondary">#757575</color>      <!-- Medium gray -->
-    <color name="primary_text">#212121</color>             <!-- Duplicate for legacy or use -->
-    <color name="secondary_text">#757575</color>           <!-- Duplicate -->
-
-    <!-- Buttons -->
-    <color name="colorButtonNormal">#FF9800</color>       <!-- Orange button color -->
-    <color name="minetbutton_color">#FF9800</color>       <!-- Another button color if used -->
-
-    <!-- Add additional color resources if your layouts/styles reference them -->
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#B2B2B2</color>
 </resources>
